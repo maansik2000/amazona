@@ -4,25 +4,25 @@ const data = {
   users: [
     {
       name: "Mansi",
-      email: "admin@example.com",
-      password: bcrypt.hashSync("1111", 8),
+      email: "admin@gmail.com",
+      password: bcrypt.hashSync("admin", 8),
       isAdmin: true,
     },
     {
       name: "Severus Snape",
-      email: "severusSnape@example.com",
+      email: "severusSnape@gmail.com",
       password: bcrypt.hashSync("severus", 8),
       isAdmin: false,
     },
     {
       name: "Hermione Granger",
-      email: "hermioneGranger@example.com",
+      email: "hermioneGranger@gmail.com",
       password: bcrypt.hashSync("hermione", 8),
       isAdmin: false,
     },
     {
       name: "Sabastian Snape",
-      email: "sebastianSnape@example.com",
+      email: "sebastianSnape@gmail.com",
       password: bcrypt.hashSync("sabastian", 8),
       isAdmin: false,
     },
@@ -60,7 +60,7 @@ const data = {
       brand: "Anthra Melange",
       rating: 4.8,
       price: 399,
-      countInStock : 10,
+      countInStock: 10,
       numReviews: 9,
       description:
         "Fend off the chill with this Women Grey Anthra Melange Hoodie Sweatshirt. Pair the hoodie up with casual and comfortable joggers and some sneakers for a sporty look.",

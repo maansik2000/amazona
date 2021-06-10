@@ -7,22 +7,30 @@ import MessageBox from "../components/MessageBox";
 import { detailsProduct } from "../actions/productActions";
 
 const ProductScreen = (props) => {
+
   const dispatch = useDispatch();
   const productId = props.match.params.id;
+  console.log(productId);
   const [qty, setQty] = useState(1);
-  const productDetails = useSelector((state) => state.productDetails);
-  const { loading, error, product } = productDetails;
+
+
+  const productDetails = useSelector((state) => state.productDetails);         //get the data from the redux store
+  const { loading, error, product } = productDetails; //deconstruction
 
   useEffect(() => {
     dispatch(detailsProduct(productId));
   }, [dispatch, productId]);
 
+
   const addToCartHandler = () => {
-    props.history.push(`/cart/${productId}?qty=${qty}`);
+    props.history.push(`/cart/${productId}?qty=${qty}`);       //redirect user to the cart screen
   };
+
+  // const product = data.products.find((x) => x _id === props.match.params.id);    //find the particular product with the given id
 
   return (
     <div>
+    
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
@@ -87,7 +95,7 @@ const ProductScreen = (props) => {
                               value={qty}
                               onChange={(e) => setQty(e.target.value)}
                             >
-                              {[...Array(product.countInStock).keys()].map(
+                              {[...Array(product.countInStock).keys()].map(             //[...Array(product.countInStock).keys()] it returned the value till countInstock
                                 (x) => (
                                   <option key={x + 1} value={x + 1}>
                                     {x + 1}
