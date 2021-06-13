@@ -3,7 +3,8 @@ import dotenv from "dotenv";
 import data from "./data.js";
 import mongoose from "mongoose";
 import userRouter from "./router/userRouter.js";
-import productRouter from './router/ProductRouter.js';
+import productRouter from "./router/ProductRouter.js";
+import orderRouter from "./router/orderRouter.js";
 
 //it is te entry point of our backend
 
@@ -28,7 +29,11 @@ app.get("/", (req, res) => {
 
 app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
+app.use("/api/orders", orderRouter);
 
+app.get('/api/config/paypal', (req, res) => {
+  res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
+});
 
 //this middleware is a error catcher
 app.use((err, req, res, next) => {
@@ -40,8 +45,6 @@ const port = process.env.PORT || 5000; //environment variable for the port
 app.listen(port, () => {
   console.log(`server at http://localhost:${port}`);
 });
-
-
 
 /*// send a ajax response and send project id
 // get the specific product from the backend

@@ -60,19 +60,7 @@ export default function PaymentScreen(props) {
             <label htmlFor="stripe">Stripe</label>
           </div>
         </div>
-        <div>
-          <div>
-            <input
-              type="radio"
-              id="COD"
-              value="Cash On Delivery"
-              name="paymentMethod"
-              required
-              onChange={(e) => setPaymentMethod(e.target.value)}
-            ></input>
-            <label htmlFor="COD">Cash On Delivery</label>
-          </div>
-        </div>
+
         <div>
           <button className="primary" type="submit">
             Continue
