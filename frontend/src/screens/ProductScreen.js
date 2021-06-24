@@ -14,8 +14,8 @@ const ProductScreen = (props) => {
   const [qty, setQty] = useState(1);
 
 
-  const productDetails = useSelector((state) => state.productDetails);         //get the data from the redux store
-  const { loading, error, product } = productDetails; //deconstruction
+  const productDetails = useSelector((state) => state.productDetails);        
+  const { loading, error, product } = productDetails; 
 
   useEffect(() => {
     dispatch(detailsProduct(productId));
@@ -23,10 +23,8 @@ const ProductScreen = (props) => {
 
 
   const addToCartHandler = () => {
-    props.history.push(`/cart/${productId}?qty=${qty}`);       //redirect user to the cart screen
+    props.history.push(`/cart/${productId}?qty=${qty}`);       
   };
-
-  // const product = data.products.find((x) => x _id === props.match.params.id);    //find the particular product with the given id
 
   return (
     <div>

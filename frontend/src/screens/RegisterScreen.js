@@ -13,7 +13,7 @@ export default function RegisterScreen(props) {
 
   const redirect = props.location.search
     ? props.location.search.split("=")[1]
-    : "/";
+    : "/"; 
 
   const userRegister = useSelector((state) => state.userRegister);
   const { userInfo, loading, err } = userRegister;

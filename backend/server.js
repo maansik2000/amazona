@@ -12,7 +12,7 @@ dotenv.config();
 
 const app = express();
 
-app.use(express.json());
+c
 app.use(express.urlencoded({ extended: true }));
 
 //connect to mongodb database
